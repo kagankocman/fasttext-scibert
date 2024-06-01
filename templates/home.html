@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+    <title>Home Page</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="https://www.kocaeli.edu.tr/_next/image?url=https%3A%2F%2Fapi.kocaeli.edu.tr%2Fapi%2FFileOperation%3FfilePath%3D1000%2FLogo%2F2024%2F04%2F20240429_427d7_amblem-bfb.webp&w=640&q=75" alt="Kocaeli Üniversitesi Logo">
+            <span>Kocaeli Üniversitesi</span>
+        </div>
+        <nav class="nav-bar">
+            <a href="{{ url_for('login') }}" class="button">Login</a>
+            <a href="{{ url_for('register') }}" class="button">Register</a>
+        </nav>
+    </header>
+    <div class="main-content">
+        <h1>Hoş Geldiniz!</h1>
+        <p>Krapivin2009 makale veritabanı için kişiye özel öneri ve arama motoru sistemi</p>
+    </div>
+</body>
+</html>
+

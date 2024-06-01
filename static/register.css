@@ -1,0 +1,104 @@
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+}
+
+h2 {
+  color: #333;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label {
+  margin-top: 10px;
+  color: #333;
+}
+
+input {
+  width: 25%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.button {
+  width: 320px;
+  margin-top: 20px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  text-decoration: none;
+  background-color: #39853c;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: #45a049;
+}
+
+p {
+  margin-top: 20px;
+  color: #666;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+textarea {
+  width: 27%;
+  height: 100px;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+#registerForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.imgcontainer {
+  text-align: center;
+  margin: 0 12px 0;
+}
+
+.button2 {
+  padding: 8px;
+  margin: 5px;
+  cursor: pointer;
+  background-color: #69af3c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+}
+
+.button-class {
+  display: flex;
+}

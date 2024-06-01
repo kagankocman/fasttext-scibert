@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='register.css') }}">
+</head>
+<body>
+<div class="container">
+    <div class="imgcontainer">
+    <img src="{{ url_for('static', filename='register.png') }}" alt="Avatar" class="avatar">
+    </div>
+    <form id="registerForm" method="POST" action="{{ url_for('register') }}">
+      <label for="name"><b>Name</b></label>
+      <input type="text" placeholder="Enter Name" id="name" name="name" required>
+
+      <label for="surname"><b>Surname</b></label>
+      <input type="text" placeholder="Enter Surname" id="surname" name="surname" required>
+
+      <label for="email"><b>Email</b></label>
+      <input type="email" placeholder="Enter Email" id="email" name="email" required>
+
+      <label for="password"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" id="password" name="password" required>
+
+      <label for="dob"><b>Date of Birth</b></label>
+      <input type="date" placeholder="Enter Birthday" id="dob" name="dob" required>
+
+      <label for="interests"><b>Interests</b></label>
+      <textarea id="interests" placeholder="Enter Interests" name="interests"></textarea><br>
+        <label><b>Önerilen İlgi Alanları:</b></label><br>
+        <div class="button-class">
+            <button type="button" class="button2" onclick="addInterest('scheduling')">Scheduling</button>
+            <button type="button" class="button2" onclick="addInterest('data mining')">Data Mining</button>
+            <button type="button" class="button2" onclick="addInterest('computational complexity')">Computational Complexity</button>
+            <button type="button" class="button2" onclick="addInterest('performance evaluation')">Performance Evaluation</button>
+            <button type="button" class="button2" onclick="addInterest('approximation algorithms')">Approximation Algorithms</button>
+        </div>
+
+    <script>
+    function addInterest(interest) {
+        var textarea = document.getElementById('interests');
+        if (textarea.value.length > 0) {
+            textarea.value += '\n'; // Virgül yerine satır sonu karakteri
+        }
+        textarea.value += interest;
+    }
+    </script>
+      <button type="submit" class="button">Register</button>
+    </form>
+    <p>Already have an account? <a href="{{ url_for('login') }}">Login here</a></p>
+  </div>
+
+</body>
+</html>

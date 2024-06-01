@@ -1,0 +1,101 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 3%;
+    text-align: center;
+    position: relative;
+}
+
+.container {
+    display: flex;
+}
+
+.sidebar {
+    flex: 1;
+    background-color: #f1f1f1;
+    padding: 20px;
+}
+
+.content {
+    flex: 4;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.button {
+    display: block;
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.button2 {
+    margin: auto;
+    display: block;
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.button:hover {
+    background-color: #555;
+}
+
+#searchForm {
+    margin-top: 2%;
+}
+
+#searchInput {
+    padding: 10px;
+    width: 500px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 2%;
+}
+
+.avatar {
+  width: 10%;
+  border-radius: 2%;
+  object-fit: cover;
+}
+
+
+.button3 {
+    background-color: #ffffff;
+    position: absolute;
+    border: none;
+    color: #000000;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 0 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.button3:hover {
+    background-color: #a39a9a;
+}

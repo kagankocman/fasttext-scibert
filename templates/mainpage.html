@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Makale Sistemi</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='mainpage.css') }}">
+</head>
+<body>
+<header>
+        <a href="{{ url_for('home') }}" class="button2">Logout</a>
+</header>
+    <div class="container">
+        <div class="sidebar">
+            <h2>İşlemler</h2>
+            <a href="{{ url_for('profile', email=email) }}" class="button">Profil Yönetimi</a>
+            <a href="{{ url_for('search', email=email) }}" class="button">Arama Motoru</a>
+            <a href="{{ url_for('suggestion', email=email) }}" class="button">Öneri Sistemi</a>
+        </div>
+        <div class="content">
+            {% if name and surname %}
+                <p class="welcome-message">Hoşgeldin, {{ name }} {{ surname }}</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Öneri Sonuçları</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='suggestion.css') }}">
+</head>
+<body>
+<header>
+    <a href="{{ url_for('home') }}" class="button2">Logout</a>
+</header>
+<div class="container">
+    <div class="sidebar">
+        <h2>İşlemler</h2>
+        <a href="{{ url_for('profile', email=email) }}" class="button">Profil Yönetimi</a>
+        <a href="{{ url_for('search', email=email) }}" class="button">Arama Motoru</a>
+        <a href="{{ url_for('suggestion', email=email) }}" class="button">Öneri Sistemi</a>
+    </div>
+    <div class="content">
+        <div class="search-results">
+            <span class="h1-message">FastText için öneri sonuçları</span>
+        </div>
+        <form id="articleForm" method="POST" action="{{ url_for('suggestion', email=email) }}">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Seç</th>
+                        <th>Article ID</th>
+                        <th>Başlık</th>
+                        <th>Özet</th>
+                        <th>Benzerlik</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for result in top_articles_fasttext %}
+                    <tr>
+                        <td><input type="checkbox" name="selected_articles_fasttext" value="{{ result.id }}"></td>
+                        <td>{{ result.id }}</td>
+                        <td>{{ result.title }}</td>
+                        <td>{{ result.abstract }}</td>
+                        <td>{{ result.similarity }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <div class="search-results">
+                <span class="h1-message">SciBert için öneri sonuçları</span>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Seç</th>
+                        <th>Article ID</th>
+                        <th>Başlık</th>
+                        <th>Özet</th>
+                        <th>Benzerlik</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for result in top_articles_scibert %}
+                    <tr>
+                        <td><input type="checkbox" name="selected_articles_scibert" value="{{ result.id }}"></td>
+                        <td>{{ result.id }}</td>
+                        <td>{{ result.title }}</td>
+                        <td>{{ result.abstract }}</td>
+                        <td>{{ result.similarity }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <div class="button3-container">
+                <button type="submit" class="button3">Seçili Makaleleri Gönder</button>
+            </div>
+            <span class="left-aligned"> Precision Fasttext: {{ precision_fasttext }}% </span>
+            <span class="right-aligned">Precision Scibert: {{ precision_scibert }}%</span>
+        </form>
+    </div>
+</div>
+</body>
+</html>

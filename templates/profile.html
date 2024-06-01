@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='profile.css') }}">
+</head>
+<body>
+<header>
+        <a href="{{ url_for('home') }}" class="button2">Logout</a>
+</header>
+    <div class="container">
+        <div class="sidebar">
+            <h2>İşlemler</h2>
+            <a href="{{ url_for('profile', email=email) }}" class="button">Profil Yönetimi</a>
+            <a href="{{ url_for('search', email=email) }}" class="button">Arama Motoru</a>
+            <a href="{{ url_for('suggestion', email=email) }}" class="button">Öneri Sistemi</a>
+        </div>
+        <div class="content">
+            <form id="profileForm" method="POST" action="{{ url_for('profile', email=email) }}">
+            <label for="name"><b>Name</b></label>
+            <input type="text" id="name" name="name" value="{{ name }}" required>
+
+            <label for="surname"><b>Surname</b></label>
+            <input type="text" id="surname" name="surname" value="{{ surname }}" required>
+
+            <label for="email"><b>Email</b></label>
+            <input type="email" id="email" name="email" value="{{ email }}" required disabled>
+
+            <label for="password"><b>Password</b></label>
+            <input type="password" placeholder="Required" id="password" name="password" required>
+
+            <label for="dob"><b>Date of Birth</b></label>
+            <input type="date" id="dob" name="dob" value="{{ dob }}" required>
+
+            <label for="interests"><b>Interests</b></label>
+            <textarea id="interests" name="interests" rows="4" cols="50">{{ interests }}</textarea>
+
+            <button type="submit" class="button">Update Profile</button>
+        </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arama Motoru</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='search.css') }}">
+</head>
+<body>
+<header>
+        <a href="{{ url_for('home') }}" class="button3">Logout</a>
+</header>
+    <div class="container">
+        <div class="sidebar">
+            <h2>İşlemler</h2>
+            <a href="{{ url_for('profile', email=email) }}" class="button">Profil Yönetimi</a>
+            <a href="{{ url_for('search', email=email) }}" class="button">Arama Motoru</a>
+            <a href="{{ url_for('suggestion', email=email) }}" class="button">Öneri Sistemi</a>
+        </div>
+        <div class="content">
+            <img src="{{ url_for('static', filename='search.png') }}" alt="Avatar" class="avatar">
+            <form id="searchForm" method="POST" action="{{ url_for('search', email=email) }}">
+                <input type="text" id="searchInput" name="query" placeholder="Aramak istediğiniz makaleyi girin">
+                <button type="submit" class="button2">Ara</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
